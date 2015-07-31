@@ -1,52 +1,5 @@
-# Carly and Elsa's Ada Cooks!
+# Ada Cooks!
 The goal of this project is to build an online cookbook application where users can manage Recipes and Ingredients, create Cookbook collections of different Recipes, and keep track of their Ingredients.
-
-## Project Notes:
-- Required Gems:
--- bcrypt
--- better_errors
--- bootstrap-sass
--- factory_girl_rails
--- pry-rails
--- simplecov
--- rspec-rails
--- traceroute
-
-## Data Models
---------------
-### Users
-- name:string
-- email:string
-- password
-- password_digest
-has_many :cookbooks
-has_many :recipes
-has_many :ingredients
-
-### Cookbooks
-- name:string
-- description:text
-belongs_to :user
-has_and_belongs_to_many :recipes
-has_many :ingredients, through :recipes
-
-### Recipes
-- name:string
-- description:text
-- preparation:text
-- image:blob
-belongs_to :user
-has_and_belongs_to_many :cookbooks
-has_and_belongs_to_many :ingredients
-
-
-### Ingredients
-- name:string
-- description:text
-- image:blob
-belongs_to :user
-has_and_belongs_to_many :recipes
-
 
 ## Learning Goals
 - Explore advanced ActiveRecord relationships like `has_many through:` and `has_and_belongs_to_many`.
@@ -79,7 +32,7 @@ We're doing this to make the final project easier to code review. Because the ba
   - view an alphabetical list of all Ingedients
   - view the details of an individual Ingredient, including...
     - a list of links to Recipes associated with the Ingredient
-
+    
 ### As an anonymous User I can...
 - register a new User account
 - Log In to an existing User account
